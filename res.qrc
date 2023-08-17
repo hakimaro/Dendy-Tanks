@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>res/tank_down.png</file>
+        <file>res/tank_left.png</file>
+        <file>res/tank_right.png</file>
+        <file>res/tank_up.png</file>
+        <file>res/bullet_down.png</file>
+        <file>res/bullet_left.png</file>
+        <file>res/bullet_right.png</file>
+        <file>res/bullet_up.png</file>
+    </qresource>
+    <qresource prefix="/wall">
+        <file>res/stone_full.png</file>
+        <file>res/stone_half.png</file>
+        <file>res/stone_low.png</file>
+        <file>res/iron.png</file>
+        <file>res/ground.png</file>
+        <file>res/grass.png</file>
+        <file>res/base.png</file>
+        <file>res/water.png</file>
+    </qresource>
+    <qresource prefix="/maps">
+        <file>maps/level_0.txt</file>
+    </qresource>
+    <qresource prefix="/tanks">
+        <file>res/tanks/tank0_down.png</file>
+        <file>res/tanks/tank0_left.png</file>
+        <file>res/tanks/tank0_right.png</file>
+        <file>res/tanks/tank0_up.png</file>
+        <file>res/tanks/tank1_down.png</file>
+        <file>res/tanks/tank1_left.png</file>
+        <file>res/tanks/tank1_right.png</file>
+        <file>res/tanks/tank1_up.png</file>
+        <file>res/tanks/tank2_down.png</file>
+        <file>res/tanks/tank2_left.png</file>
+        <file>res/tanks/tank2_right.png</file>
+        <file>res/tanks/tank2_up.png</file>
+        <file>res/tanks/tank3_down.png</file>
+        <file>res/tanks/tank3_left.png</file>
+        <file>res/tanks/tank3_right.png</file>
+        <file>res/tanks/tank3_up.png</file>
+    </qresource>
+</RCC>
