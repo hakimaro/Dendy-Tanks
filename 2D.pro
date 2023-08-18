@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Model/movableobject.cpp \
+    Model/unmovableobject.cpp \
     base.cpp \
     Model/bullet.cpp \
     Model/gameobject.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 
 HEADERS += \
     Model/movableobject.h \
+    Model/unmovableobject.h \
     base.h \
     Model/bullet.h \
     Model/gameobject.h \

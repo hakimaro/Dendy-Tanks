@@ -16,8 +16,9 @@ public:
     void redraw(QPainter &painter);
     void redrawMap(QPainter &painter);
 
-    void moveMan(Direction move, float dt);
     void fireMan();
+
+    bool isInObject(MovableObject object, float dt);
 
     vector2f marginPosition(vector2f position, vector2f size, float speed, float dt);
     bool canMove(Tank man, Direction , float dt);

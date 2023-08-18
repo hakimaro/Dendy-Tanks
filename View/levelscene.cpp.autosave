@@ -124,10 +124,10 @@ bool PoolTableScene::isHitWall(Bullet bullet)
     return false;
 }
 */
-/*
-void PoolTableScene::redrawMap(QPainter &painter) {
+
+void LevelScene::redrawMap(QPainter &painter) {
     painter.setRenderHint(QPainter::Antialiasing);
-    for(int i = 0; i < m_map.map_sizes().x; ++i) {
+    for(int i = 0; i < m_level->map()->map_sizes().x; ++i) {
         QString str;
         for(int j = 0; j < m_map.map_sizes().y; ++j) {
             str.append(QString::number(m_map.at(i, j)->hp()));
@@ -139,7 +139,7 @@ void PoolTableScene::redrawMap(QPainter &painter) {
     }
     return;
 }
-*/
+
 
 void LevelScene::redraw(QPainter &painter) {
     painter.setRenderHint(QPainter::Antialiasing);

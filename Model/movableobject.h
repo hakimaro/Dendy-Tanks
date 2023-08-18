@@ -2,7 +2,7 @@
 #define MOVABLEOBJECT_H
 
 #include "gameobject.h"
-#include "move.h"
+#include "Model/map.h"
 #include <rect.h>
 
 enum class Direction { LEFT = 180, UP = 270, RIGHT = 0, DOWN = 90 };
@@ -28,6 +28,7 @@ public:
     bool isMoving() const;
     void setIsMoving(bool newIsMoving);
 
+    bool containsObject(const Map *map, float dt);
 protected:
     Direction m_direction;
     float m_speed;
