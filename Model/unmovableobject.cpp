@@ -1,22 +1,14 @@
 #include "unmovableobject.h"
+#include <QDebug>
 
-UnmovableObject::UnmovableObject()
+UnmovableObject::UnmovableObject(UnmovableObjectType type) :
+    objectType(type)
 {
-    setWallType(WallType::BRICK);
+    setType(ObjectType::UNMOVABLE);
+    m_image = new QImage(QString(":objects/res/objects/Wall_%1.png").arg((int) type));
 }
 
 QImage *UnmovableObject::image()
 {
-    return m_wallImage;
-}
-
-WallType UnmovableObject::wallType() const
-{
-    return m_wallType;
-}
-
-void UnmovableObject::setWallType(WallType newWallType)
-{
-    m_wallImage = new QImage(QString(":objects/res/objects/wall_%1.png").arg((int) newWallType));
-    m_wallType = newWallType;
+    return m_image;
 }

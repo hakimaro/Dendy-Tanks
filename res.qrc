@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/maps">
         <file>maps/level_0.txt</file>
+        <file>maps/level_0.json</file>
     </qresource>
     <qresource prefix="/tanks">
         <file>res/tanks/tank0_down.png</file>
@@ -19,11 +20,19 @@
         <file>res/tanks/tank3_left.png</file>
         <file>res/tanks/tank3_right.png</file>
         <file>res/tanks/tank3_up.png</file>
+        <file>res/bullet_down.png</file>
+        <file>res/bullet_left.png</file>
+        <file>res/bullet_right.png</file>
+        <file>res/bullet_up.png</file>
     </qresource>
     <qresource prefix="/objects">
         <file>res/objects/wall_0.png</file>
         <file>res/objects/wall_1.png</file>
         <file>res/objects/wall_2.png</file>
         <file>res/objects/wall_3.png</file>
+        <file>res/objects/Wall_0.png</file>
+        <file>res/objects/Wall_1.png</file>
+        <file>res/objects/Wall_2.png</file>
+        <file>res/objects/Wall_3.png</file>
     </qresource>
 </RCC>

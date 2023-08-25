@@ -25,6 +25,7 @@ public:
     void setSpawnPosition(const vector2f &newSpawnPosition);
 
 private:
+    float lives = 3;
     vector2f m_spawnPosition;
     Team m_currentTeam;
     Bullet *m_bullet;

@@ -1,7 +1,7 @@
 #include "tank.h"
 
 Tank::Tank() :
-    MovableObject()
+    MovableObject(MovableObjectType::TANK)
   , m_spawnPosition(0, 0)
   , m_currentTeam(Team::GREEN)
   , m_bullet(nullptr)
@@ -11,7 +11,7 @@ Tank::Tank() :
 
 void Tank::changeTeam(Team team)
 {
-    m_currentTeam = team;
+    m_currentTeam = team;    
     images.left  = new QImage(QString(":tanks/res/tanks/tank%1_left.png").arg((int) team));
     images.right = new QImage(QString(":tanks/res/tanks/tank%1_right.png").arg((int) team));
     images.up    = new QImage(QString(":tanks/res/tanks/tank%1_up.png").arg((int) team));
@@ -20,7 +20,7 @@ void Tank::changeTeam(Team team)
 
 void Tank::fire()
 {
-
+//    m_bullet = new Bullet(m_position, { m_size.x/3, m_size.y/3 }, m_direction);
 }
 
 Bullet* Tank::bullet() {

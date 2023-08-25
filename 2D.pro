@@ -11,33 +11,25 @@ CONFIG += c++17
 SOURCES += \
     Model/movableobject.cpp \
     Model/unmovableobject.cpp \
-    base.cpp \
     Model/bullet.cpp \
     Model/gameobject.cpp \
     Model/level.cpp \
     View/levelscene.cpp \
     main.cpp \
-    man.cpp \
     Model/map.cpp \
     View/rasterwindow.cpp \
-    Model/tank.cpp \
-    wall.cpp
+    Model/tank.cpp
 
 HEADERS += \
     Model/movableobject.h \
     Model/unmovableobject.h \
-    base.h \
     Model/bullet.h \
     Model/gameobject.h \
-    keys.h \
     Model/level.h \
     View/levelscene.h \
-    man.h \
     Model/map.h \
-    move.h \
     View/rasterwindow.h \
-    Model/tank.h \
-    wall.h
+    Model/tank.h
 
 FORMS +=
 

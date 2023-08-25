@@ -3,8 +3,9 @@
 
 #include <vector2f.h>
 #include <QImage>
+#include <rect.h>
 
-typedef enum class TypeOfObject { SPACE = 0, WATER, WALL, PLAYER, ENEMY, BULLET } ObjectType;
+typedef enum class TypeOfObject { SPACE = 0, UNMOVABLE = 1, MOVABLE = 2 } ObjectType;
 
 class GameObject
 {
@@ -14,25 +15,23 @@ public:
 
     virtual QImage* image();
 
-    vector2f position() const;
-    void setPosition(const vector2f &newPosition);
-
     ObjectType type() const;
     void setType(ObjectType newType);
 
     float hp() const;
     void setHp(float newHp);
 
-    vector2f size() const;
-    void setSize(const vector2f &newSize);
+    QRectF bounds() const;
+    void setBounds(const QRectF& newBounds);
 
     // For DEBUGGING
     void showType();
 protected:
     ObjectType m_type;
-    vector2f m_position;
     float m_hp;
-    vector2f m_size;
+
+    // AABB объекта.
+    QRectF m_bounds;
 };
 
 #endif // GAMEOBJECT_H

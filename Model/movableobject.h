@@ -2,15 +2,23 @@
 #define MOVABLEOBJECT_H
 
 #include "gameobject.h"
-#include "Model/map.h"
+//#include "Model/map.h"
 #include <rect.h>
 
 enum class Direction { LEFT = 180, UP = 270, RIGHT = 0, DOWN = 90 };
+enum class MovableObjectType { BULLET, TANK };
+
+typedef struct KeysToPress {
+    bool left = false;
+    bool right = false;
+    bool up = false;
+    bool down = false;
+} pressedKeys;
 
 class MovableObject : public GameObject
 {
 public:
-    MovableObject();
+    MovableObject(MovableObjectType type);
     ~MovableObject() = default;
 
     void move(float dt);
@@ -21,15 +29,16 @@ public:
     Direction direction() const;
     void setDirection(Direction newDirection);
 
-    void marginPosition(RectF bounds, float dt);
-
     QImage* image() override;
 
     bool isMoving() const;
     void setIsMoving(bool newIsMoving);
 
-    bool containsObject(const Map *map, float dt);
+    MovableObjectType movableType() const;
+    void setMovableType(MovableObjectType newMovableType);
+
 protected:
+    MovableObjectType m_movableType;
     Direction m_direction;
     float m_speed;
     bool m_isMoving = false;

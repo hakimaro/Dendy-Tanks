@@ -10,7 +10,6 @@
 #include <QtCore/QElapsedTimer>
 
 #include "View/levelscene.h"
-#include "keys.h"
 
 class RasterWindow : public QWindow
 {

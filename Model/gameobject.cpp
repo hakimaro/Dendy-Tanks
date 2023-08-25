@@ -1,26 +1,21 @@
 #include "gameobject.h"
+#include <QDebug>
 
 GameObject::GameObject() :
-    m_type(TypeOfObject(0))
-  , m_position(0, 0)
+    m_type(ObjectType::SPACE)
+  //, m_position(0, 0)
   , m_hp(0)
-  , m_size(0, 0)
+  //, m_size(0, 0)
 {
 
-}
-
-vector2f GameObject::position() const
-{
-    return m_position;
-}
-
-void GameObject::setPosition(const vector2f &newPosition)
-{
-    m_position = newPosition;
 }
 
 ObjectType GameObject::type() const
 {
+    if (this == nullptr) {
+        qDebug() << "Nullptr";
+        return ObjectType::MOVABLE;
+    }
     return m_type;
 }
 
@@ -39,27 +34,33 @@ float GameObject::hp() const
 void GameObject::setHp(float newHp)
 {
     m_hp = newHp;
+
+    if (m_hp <= 0 && m_type == ObjectType::UNMOVABLE) {
+        m_type = ObjectType::SPACE;
+    }
 }
 
-vector2f GameObject::size() const
-{
-    return m_size;
-}
-
-void GameObject::setSize(const vector2f &newSize)
-{
-    m_size = newSize;
-}
-
-#include <QDebug>
 void GameObject::showType()
 {
     switch(m_type) {
     case ObjectType::SPACE:
         qDebug() << "Space";
         break;
-    case ObjectType::WALL:
-        qDebug() << "Wall";
+    case ObjectType::UNMOVABLE:
+        qDebug() << "UNMOVABLE";
+        break;
+    case ObjectType::MOVABLE:
+        qDebug() << "MOVABLE";
         break;
     }
+}
+
+QRectF GameObject::bounds() const
+{
+    return m_bounds;
+}
+
+void GameObject::setBounds(const QRectF&newBounds)
+{
+    m_bounds = newBounds;
 }

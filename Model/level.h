@@ -13,15 +13,13 @@ public:
     void loadNextLevel();
 
     Tank *player() const;
-
     std::vector<Tank *> enemies() const;
 
     Map *map() const;
+    bool marginPosition(MovableObject *object, QRectF bounds);
 private:
     int m_currentLevel = 0;
     Map *m_map;
-    std::vector<Tank*> m_enemies;
-    Tank *m_player;
 };
 
 #endif // LEVEL_H

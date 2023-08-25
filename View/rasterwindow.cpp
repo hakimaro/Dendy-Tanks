@@ -6,7 +6,7 @@ constexpr unsigned WINDOW_HEIGHT = 600;
 RasterWindow::RasterWindow(QWindow *parent)
     : QWindow(parent)
     , m_backing_store(new QBackingStore(this))
-    , m_scene(std::make_unique<LevelScene>(RectF{0, 0, float(WINDOW_WIDTH), float(WINDOW_HEIGHT)}))
+    , m_scene(std::make_unique<LevelScene>(QRectF{0, 0, float(WINDOW_WIDTH), float(WINDOW_HEIGHT)}))
 {
     setMinimumSize(QSize(WINDOW_WIDTH, WINDOW_HEIGHT));
     setMaximumSize(QSize(WINDOW_WIDTH, WINDOW_HEIGHT));
@@ -111,10 +111,6 @@ void RasterWindow::renderScene() {
     QPainter painter(device);
 
     painter.fillRect(0, 0, width(), height(), Qt::black);
-    if (m_is_first_render) {
-        //m_scene->redrawMap(painter);
-        m_is_first_render = false;
-    }
     m_scene->redraw(painter);
     painter.end();
 
